@@ -1097,6 +1097,9 @@
           handlers.push(eventHandler);
         });
         handlers.forEach(function (eventHandler) {
+          if (!data.length) {
+            data = [context];
+          }
           eventHandler.apply(context, data);
         });
       }
