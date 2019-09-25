@@ -1052,6 +1052,9 @@ class SwiperClass {
           handlers.push(eventHandler);
         });
         handlers.forEach((eventHandler) => {
+          if (!data.length) {
+            data = [context];
+          }
           eventHandler.apply(context, data);
         });
       }
